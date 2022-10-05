@@ -1,0 +1,186 @@
+$grey: #7e818e;
+$white: #ededed;
+$black: #3a3842;
+.racoon{
+    position: relative;
+    width: 200px;
+    aspect-ratio: 1/1;
+    margin: 0 auto -70px;
+}
+.racoon_face{
+    width: 100%;
+    aspect-ratio: 1/1;
+	border-radius: 50%;
+	background-color: $grey;
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+.racoon_eye{
+	position: absolute;
+	top: 42%;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #000000;
+	animation: blink 5s ease-in-out infinite;
+	&:after{
+		content: '';
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		width: 3px;
+		height: 3px;
+		background-color: #ffffff;
+		border-radius: 50%;
+	}
+	&-left{
+		left: 30%;
+	}
+	&-right{
+		right: 30%;
+	}
+}
+.racoon_nose{
+	width: 20px;
+	height: 20px;
+	background-color: #000000;
+	border-radius: 50% 50% 50% 50%/ 70% 70% 30% 30%;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translateX(-50%);
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+	
+}
+.racoon_fur{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.racoon_fur-white{
+	background-color: $white;
+}
+.racoon_fur-grey{
+	background-color: $grey;
+}
+.racoon_fur-black{
+	background-color: $black;
+}
+.racoon_fur-1{
+	bottom: 0;
+	width: 100%;
+	height: 95%;
+	border-radius: 50%;
+}
+.racoon_fur-2{
+	width: 85%;
+	top: 0;
+	height: 100%;
+	border-radius: 50%;
+
+}
+.racoon_fur-3{
+	bottom: 0;
+	height: 75%;
+	border-radius: 49%;
+	width: 90%
+}
+.racoon_fur_eye{
+	position: absolute;
+	bottom: 2%;
+	width: 35%;
+	height: 70%;
+	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40% ;
+	&-left{
+		left: 3%;
+		transform: rotate(45deg);
+	}
+	&-right{
+		right: 3%;
+		transform: rotate(-45deg);
+	}
+}
+.racoon_fur_nose-1{
+	width: 20%;
+	height: 70%;
+	bottom: 25%;
+	border-radius: 50% 50% 50% 50% / 80% 80% 20% 20% ;
+}
+.racoon_fur_nose-2{
+	width: 30%;
+	height: 40%;
+	bottom: 0%;
+	border-radius: 50%;
+}
+
+.racoon_ear{
+	background-color: $grey;
+	border-radius: 50% 50% 20% 80% / 50% 80% 20% 50%;
+	width: 50px;
+	height: 50px;
+	top: -10px;
+	position: absolute;
+	&:after{
+		content: '';
+		position: absolute;
+		bottom: 2px;
+		top: 4px;
+		left: 4px;
+		right: 2px;
+		background-color: $black;
+		border-radius: 50% 50% 20% 80% / 50% 80% 20% 50%;
+		box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5);
+	}
+	&-left{
+		left: 0
+	}
+	&-right{
+		right: 0;
+		transform: rotateY(180deg);
+	}
+}
+.racoon_whisker{
+	position: absolute;
+	top: 70%;
+	width: 120px;
+	height: 1px;
+	background-color: #ffffff;
+	&-left{
+		right: 58%;
+		transform-origin: 100% 50%;
+		border-radius: 50% 0 0 50%;
+		&.racoon_whisker-1{
+			right: 57%;
+		}
+	}
+	&-right{
+		left: 58%;
+		transform-origin: 0% 50%;
+		border-radius: 0 50% 50% 0;
+		&.racoon_whisker-1{
+			left: 57%;
+		}
+	}
+}
+@for $j from 1 through 3{
+	$translation: 5px * $j;
+	$rotation: (10deg * $j - 20deg);
+	.racoon_whisker-right.racoon_whisker-#{$j}{
+		transform: translateY($translation) rotate($rotation);
+	}
+	.racoon_whisker-left.racoon_whisker-#{$j}{
+		transform: translateY($translation) rotate(-1 * $rotation);
+	}
+}
+@keyframes blink{
+	0%, 94%{
+		transform: scale(1)
+	}
+	96%{
+		transform: scaleY(0.1)
+	}
+	100%{
+		transform: scale(1)
+	}
+}

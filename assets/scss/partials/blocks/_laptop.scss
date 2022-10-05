@@ -1,0 +1,124 @@
+$laptop-corners: 15px;
+$laptop-color: silver;
+$laptop-aspect-ratio: 16/9;
+$laptop-corners-inner: 8px;
+.laptop-wrapper{
+    perspective: 900px;
+}
+.laptop{
+	perspective-origin: 70% 33%;
+    perspective: 800px;
+	transform: rotateX(10deg) rotateY(-5deg) rotateZ(8deg);
+}
+.laptop-base{
+	background: linear-gradient(167deg, rgba(217,217,217,1) 0%, rgba(205,205,205,1) 70%, rgba(194,194,194,1) 100%);
+	width: 100%;
+	aspect-ratio: $laptop-aspect-ratio;
+	border-radius: $laptop-corners;
+	padding: 6% 0 3% 0;
+	display: grid;
+	grid-template-columns: 6% 88% 6%;
+	grid-template-rows: 60% 40%;
+	row-gap: 3%;
+	position: relative;
+	box-shadow: 3px 5px 0 -1px #5d5d5d;
+	transform: rotatex(55deg);
+	transform-origin: 50% 0%;
+}
+.laptop-keyboard{
+	flex-grow: 1;
+	flex-basis: 88%;
+	
+	border-radius: $laptop-corners-inner;
+	display: flex;
+	flex-direction: column;
+	padding: 1%;
+	gap: 2%;
+	box-shadow: inset 0px -3px 3px 3px rgba(255, 255, 255, 1), inset 0px 2px 2px rgba(0, 0, 0, 1);
+}
+.laptop-row{
+	width: 100%;
+	flex-grow: 1;
+	flex-basis: 10%;
+	display: flex;
+	gap: 1%;
+}
+.laptop-touchbar{
+	flex-basis: 80%
+}
+.laptop-key{
+	background-color: black;
+	border-radius: 4px;
+	height: 100%;
+	flex-grow: 1;
+	box-shadow: 2px 2px 2px #ffffff;
+	&-s{
+		flex-grow: 0.7;
+	}
+	&-sm{
+		flex-grow: 1.3;
+	}
+	&-m{
+		flex-grow: 2;
+	}
+	&-l{
+		flex-grow: 3;
+	}
+	&-xl{
+		flex-grow: 5;
+	}
+}
+.laptop-numpad{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 3%;
+	.laptop-key{
+		grid-row-start: 2;
+		&:nth-child(1){
+			grid-row-start: 1;
+			grid-column-start: 2;
+		}
+	}
+}
+.laptop-mousepad{
+	height: 100%;
+	grid-column-start: 2;
+	margin: 0 auto;
+	aspect-ratio: 16/9;
+	box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+	border-radius: $laptop-corners-inner;
+}
+.laptop-speaker{
+	 background-image: radial-gradient(rgba(0, 0, 0, 0.3) 40%, transparent 40%);
+  background-position: 0 0;
+  background-size: 3px 3px;
+}
+.laptop-screen{
+	width: 100%;
+	aspect-ratio: $laptop-aspect-ratio;
+	border-radius: $laptop-corners;
+	background: linear-gradient(178deg, #c0c0c0 0%, #cdcdcd 70%, #868686 100%);
+	padding: 2px 2px 5% 2px;
+	box-shadow: 2px -1px 0px 0px #5d5d5d;
+}
+.laptop-display{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	border-radius: 13px 13px 0 0;
+}
+
+.laptop svg{
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+	.bird{
+		fill: url(#birdGradient);
+	}
+	.flight{
+		fill: transparent;
+		stroke: white;
+		stroke-width: 1px;
+	}
+}
