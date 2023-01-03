@@ -7,9 +7,14 @@
     background-color: white;
     h2{
         font-size: var(--step-3);
-        font-weight: 400;;
+        font-weight: bold;
     }
     &--square{
         aspect-ratio: 1/1;
+    }
+    &__background{
+        position: absolute;
+        left: 85%;
+        bottom: 65%;
     }
 }

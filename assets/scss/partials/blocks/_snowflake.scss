@@ -1,0 +1,86 @@
+.snowflake-square{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #020216;
+    padding: 0px;
+    overflow: visible;
+}
+.snowflake{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -50%);
+	height: 90%;
+	aspect-ratio: 1/1;
+	animation: 5s dissolve ease-out infinite;
+}
+.line{
+	border-radius: 10px 10px 0 0;
+	background-color: white;
+	position: absolute;
+	transform-origin: center bottom;
+	bottom: 0;
+	animation: 1.5s draw linear forwards;
+}
+.line1, .line-between{
+	bottom: 50%;
+	right: 50%;
+	
+}
+@keyframes draw{
+	from{
+		height: 0;
+	}
+}
+.linebetween{
+	animation: 2s draw linear forwards;
+}
+.line2{
+	animation: 2.5s draw2 linear forwards;
+	&:nth-child(n + 3){
+		animation: 3s draw2 linear forwards;
+	}
+	&:nth-child(n + 5){
+		animation: 3.4s draw2 linear forwards;
+	}
+	&:nth-child(n + 7){
+		animation: 3.7s draw2 linear forwards;
+	}
+	&:nth-child(n + 9){
+		animation: 3.9s draw2 linear forwards;
+	}
+	&:nth-child(n + 11){
+		animation: 4s draw2 linear forwards;
+	}
+}
+@keyframes draw2{
+	0%, 25%{
+		height: 0;
+	}
+}
+
+.center{
+	aspect-ratio: 1/1;
+	transform: translate(50%, 50%);
+	bottom: 50%;
+	right: 50%;
+	background-color: transparent;
+	border: 5px solid white;
+	border-radius: 50%;
+	animation: 0.5s draw linear forwards;
+	max-width: unset;
+}
+button{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+@keyframes dissolve{
+	0%, 80%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}

@@ -8,10 +8,10 @@
     --space-120: clamp(3.75rem, calc(2.29rem + 7.32vw), 7.50rem);
 
     --space-gutter: var(--space-80);
-    --space-margin: var(--space-80);
+    --space-margin: var(--space-100);
 
     --width-max: 100%;
-    --width-wide: 1720px;
+    --width-wide: 135rem;
     --width-narrow: 90rem;
 
     --width-max-inset: calc(var(--width-max) - (var(--space-gutter) * 2));

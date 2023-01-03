@@ -1,7 +1,6 @@
 .portfolio{
     padding: var(--space-margin) 0;
     position: relative;
-    
     h2{
         text-align: center;
         margin: 0 auto var(--space-60);
@@ -10,7 +9,7 @@
     &__background{
         position: absolute;
         left: -5%;
-        width: 100%;
+        width: 120%;
         height: 150%;
         top: -33%; 
     }
@@ -19,7 +18,17 @@
         max-width: var(--width-max-inset);
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: var(--space-20);
-        margin: 0 auto;
+        gap: var(--space-40);
+        margin: var(--space-20) auto 0 auto;
+    }
+}
+@media(max-width: 1280px){
+    .portfolio__panels{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 624px){
+    .portfolio__panels{
+        grid-template-columns: 1fr;
     }
 }

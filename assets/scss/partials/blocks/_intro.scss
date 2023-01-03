@@ -5,15 +5,18 @@
     width: var(--width-wide-inset);
     max-width: var(--width-max-inset);
     grid-template-areas: ". text . media .";
-    grid-template-columns: 1fr 5fr 1fr 3fr 2fr;
+    grid-template-columns: 1fr 8fr 1fr 5fr 1fr;
     gap: var(--space-20);
     align-items: center;
     &__text{
         grid-area: text;
         padding: var(--space-60) 0;
-        p{
-            width: 400px;
+        >p{
+            width: 500px;
             max-width: 100%;
+        }
+        h1{
+            margin-bottom: var(--space-40);
         }
     }
     &__media{
@@ -31,5 +34,71 @@
         left: -70%;
         width: calc(100% + 120%);
         height:calc(100% + 20%);
+    }
+    &__statistics{
+        font-size: var(--step-2);
+        text-transform: uppercase;
+        color: var(--color-primary);
+        letter-spacing: 0.1em;
+        position: relative;
+        margin-top: var(--space-80);
+        max-width: 300px;
+        strong{
+            display: block;
+            font-size: var(--step-4);
+            line-height: 1.5em;
+    
+        }
+        &__background{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-55%, -45%);
+            width: 180%;
+            height: 250%;
+        }
+        p{
+            margin-top: 0;
+        }
+    }
+}
+@media(max-width: 1400px){
+    .intro{
+        grid-template-areas: "text text . media .";
+    }
+}
+@media(max-width: 1280px){
+    .intro{
+        grid-template-areas: "text text . media media";
+    }
+}
+@media(max-width: 1024px){
+    .intro{
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: "text text text" ". media .";
+        &__text{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: var(--space-40);
+            h1{
+                width: 100%;
+                margin-bottom: 0;
+            }
+            >p{
+                width: 500px;
+                max-width: 100%;
+                margin: 0;
+            }
+        }
+        &__statistics{
+            max-width: 280px;
+            margin-top: 0;
+        }
+    }
+}
+@media(max-width: 480px){
+    .intro{
+        grid-template-columns: 1fr 3fr 1fr;
     }
 }

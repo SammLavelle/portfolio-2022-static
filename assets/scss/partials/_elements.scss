@@ -32,7 +32,8 @@ h2{
 	letter-spacing: 0.1em;
 }
 h3{
-	font-size: var(--step-4);
+	font-size: var(--step-2);
+	font-weight: bold;
 }
 h4{
 	font-size: var(--step-3);
@@ -60,3 +61,18 @@ p, ul, ol{
 ul, ol{
 	padding-left: 20px;
 }
+:is(h1, h2, h3, h4, h5, h6, p, li) a{
+	color: var(--color-primary);
+	text-decoration: none;
+	display: inline;
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1 1"><path d="M 0.038 0.944 C 0.335 0.843 0.61 0.888 0.934 0.91" stroke="%23941C3F" fill="none" stroke-linecap="round" vector-effect="non-scaling-stroke"  stroke-width="3" /></svg>');
+	background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+	transition: 0.2s ease-in-out;
+	&:hover, &:focus{
+		background-size: 100% 100%;
+		cursor: pointer;
+	}
+}
+
