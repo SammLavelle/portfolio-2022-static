@@ -1,0 +1,46 @@
+.fun{
+    padding: var(--space-margin) 0;
+    position: relative;
+    h2{
+        text-align: center;
+        margin: 0 auto var(--space-60);
+        max-width: var(--width-max-inset);
+    }
+    &__background{
+        position: absolute;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        top: 0%; 
+    }
+    &__panels{
+        width: var(--width-wide-inset);
+        max-width: var(--width-max-inset);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-40);
+        margin: var(--space-20) auto 0 auto;
+    }
+    &__panel{
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        position: relative;
+        z-index: 2;
+        background-color: white;
+        aspect-ratio: 1/1;
+        position: relative;
+        overflow-y: auto; 
+        a{
+            width: 100%;
+            height: 100%;
+            display: block;
+            
+        }
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+}

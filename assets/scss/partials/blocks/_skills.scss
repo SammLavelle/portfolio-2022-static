@@ -4,10 +4,10 @@
     padding: var(--space-margin) 0;
     &__background{
         position: absolute;
-        left: -10vw;
-        width: 78vw;
-        height: 90%;
-        top: -5%;
+        left: 0vw;
+        width: 60vw;
+        height: 110%;
+        top: -15%;
     }
     &__content{
         width: var(--width-wide-inset);
@@ -60,5 +60,23 @@
     }
     .skills__cta{
         min-width: 0px;
+    }
+}
+
+.contact-panel{
+    padding: var(--space-40);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    h2{
+        font-size: var(--step-3);
+        font-weight: bold;
+    }
+    &__background{
+        position: absolute;
+        left: 85%;
+        bottom: 65%;
     }
 }

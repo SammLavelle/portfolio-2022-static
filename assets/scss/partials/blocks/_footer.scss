@@ -1,0 +1,36 @@
+footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+.social{
+    display: flex;
+    gap: 30px;
+    position: relative;
+    padding: var(--space-40) var(--space-20) var(--space-20) var(--space-20);
+    &__background{
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        z-index: -1;
+        width: 200%;
+        height: 150%;
+    }
+    a{
+        text-decoration: none;
+        svg{
+            height: 30px;
+            width: 30px;
+            fill: var(--color-text);
+            transition: 0.2s ease-in-out;
+        }
+        &:hover, &:focus{
+            svg{
+                transform: scale(1.3);
+            }
+        }
+    }
+
+}

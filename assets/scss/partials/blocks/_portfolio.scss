@@ -8,18 +8,40 @@
     }
     &__background{
         position: absolute;
-        left: -5%;
-        width: 120%;
-        height: 150%;
-        top: -33%; 
+        left: 40%;
+        width: 60%;
+        height: 120%;
+        top: -10%; 
     }
     &__panels{
         width: var(--width-wide-inset);
         max-width: var(--width-max-inset);
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: var(--space-40);
         margin: var(--space-20) auto 0 auto;
+    }
+    &__panel{
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        position: relative;
+        z-index: 2;
+        background-color: white;
+        aspect-ratio: 16/9;
+        position: relative;
+        overflow-y: auto; 
+        a{
+            width: 100%;
+            height: 100%;
+            display: block;
+            
+        }
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
     }
 }
 @media(max-width: 1280px){

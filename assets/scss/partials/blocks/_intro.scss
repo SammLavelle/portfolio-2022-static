@@ -1,11 +1,11 @@
 .intro{
-    padding: var(--space-margin) 0;
+    padding: 0;
     margin: 0 auto;
     display: grid;
     width: var(--width-wide-inset);
     max-width: var(--width-max-inset);
     grid-template-areas: ". text . media .";
-    grid-template-columns: 1fr 8fr 1fr 5fr 1fr;
+    grid-template-columns: 1fr 6fr 1fr 4fr 2fr;
     gap: var(--space-20);
     align-items: center;
     &__text{
