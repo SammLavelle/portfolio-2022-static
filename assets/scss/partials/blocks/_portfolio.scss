@@ -10,7 +10,7 @@
         position: absolute;
         left: 40%;
         width: 60%;
-        height: 120%;
+        height: 110%;
         top: -10%; 
     }
     &__panels{
@@ -44,12 +44,12 @@
         }
     }
 }
-@media(max-width: 1280px){
+@media(max-width: 1500px){
     .portfolio__panels{
         grid-template-columns: repeat(2, 1fr);
     }
 }
-@media(max-width: 624px){
+@media(max-width: 1024px){
     .portfolio__panels{
         grid-template-columns: 1fr;
     }

@@ -12,8 +12,7 @@
         grid-area: text;
         padding: var(--space-60) 0;
         >p{
-            width: 500px;
-            max-width: 100%;
+            max-width: 500px;
         }
         h1{
             margin-bottom: var(--space-40);
@@ -77,24 +76,37 @@
         grid-template-columns: 1fr 2fr 1fr;
         grid-template-areas: "text text text" ". media .";
         &__text{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: var(--space-40);
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-areas: "heading stats" "text stats" "button .";
+            row-gap: var(--space-40);
+            column-gap: var(--space-80);
             h1{
-                width: 100%;
                 margin-bottom: 0;
+                grid-area: heading;
             }
             >p{
-                width: 500px;
-                max-width: 100%;
                 margin: 0;
+                grid-area: text
             }
+            .button{
+                margin-top: 0;
+                grid-area: button;
+            }
+            
         }
         &__statistics{
-            max-width: 280px;
             margin-top: 0;
+            order: 2;
+            grid-area: stats;
+            align-self: center;
         }
+    }
+}
+@media(max-width: 768px){
+    .intro__text{
+        grid-template-columns: auto;
+        grid-template-areas: "heading" "text" "stats" "button";
     }
 }
 @media(max-width: 480px){

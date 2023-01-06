@@ -37,6 +37,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 * {
@@ -235,8 +237,7 @@ footer {
   padding: var(--space-60) 0;
 }
 .intro__text > p {
-  width: 500px;
-  max-width: 100%;
+  max-width: 500px;
 }
 .intro__text h1 {
   margin-bottom: var(--space-40);
@@ -299,23 +300,36 @@ footer {
     grid-template-areas: "text text text" ". media .";
   }
   .intro__text {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: var(--space-40);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "heading stats" "text stats" "button .";
+    row-gap: var(--space-40);
+    -moz-column-gap: var(--space-80);
+         column-gap: var(--space-80);
   }
   .intro__text h1 {
-    width: 100%;
     margin-bottom: 0;
+    grid-area: heading;
   }
   .intro__text > p {
-    width: 500px;
-    max-width: 100%;
     margin: 0;
+    grid-area: text;
+  }
+  .intro__text .button {
+    margin-top: 0;
+    grid-area: button;
   }
   .intro__statistics {
-    max-width: 280px;
     margin-top: 0;
+    order: 2;
+    grid-area: stats;
+    align-self: center;
+  }
+}
+@media (max-width: 768px) {
+  .intro__text {
+    grid-template-columns: auto;
+    grid-template-areas: "heading" "text" "stats" "button";
   }
 }
 @media (max-width: 480px) {
@@ -773,7 +787,7 @@ footer {
   position: absolute;
   left: 40%;
   width: 60%;
-  height: 120%;
+  height: 110%;
   top: -10%;
 }
 .portfolio__panels {
@@ -806,12 +820,12 @@ footer {
   width: 100%;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1500px) {
   .portfolio__panels {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 624px) {
+@media (max-width: 1024px) {
   .portfolio__panels {
     grid-template-columns: 1fr;
   }
